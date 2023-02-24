@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>xss测试</title>
   <style>
     #app {
       margin: 200px;
     }
+
     input {
       width: 300px;
     }
@@ -17,11 +19,11 @@
     <p v-html="inputStr"></p>
     <input type="text" v-model="inputStr">
   </div>
-  
+
   <script src="https://unpkg.com/vue@next"></script>
   <script src="./xss.js"></script>
   <script>
-    const { createApp } = Vue;
+    const { createApp } = Vue
 
     // console.log(filterXSS, FilterXSS)
 
@@ -29,7 +31,7 @@
       data() {
         return {
           inputStr: ""
-        };
+        }
       },
     }).mount('#app');
   </script>
@@ -43,4 +45,5 @@
   <!-- &lt;img src='#' onerror='alert(1)&gt; -->
   <!-- &lt;script&gt;alert(1)&lt;/script&gt; -->
 </body>
+
 </html>
