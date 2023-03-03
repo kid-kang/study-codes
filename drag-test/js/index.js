@@ -26,7 +26,14 @@ const initSortableList = (e) => {
 // 拖动时持续触发
 sortableList.addEventListener('dragover', initSortableList)
 
-// dragstart事件 是监听拖拽物的
-// drag、dragover、dragleave事件 是监听可放置区域的
-// drag：拖拽完成事件、完成了就触发一次
-// dragover: 在可放置区域内移动则持续触发该事件
+// 在拖拽目标时触发的事件 dragstart、drag、dragend
+// 在目标区域释放时触发事件 dragenter、dragleave 、dragover 、drop
+
+// dragstart、dragend - 元素开始和结束拖动时触发此事件
+// drag - 元素正在拖动时持续触发此事件（无论是否在目标区域内）
+
+// dragenter、dragleave - 当被拖动的元素进入和离开目标区域内时触发此事件
+// dragover - 当被拖动的元素在目标区域内拖动时触发此事件
+// drop - 当被拖动的元素在目标区域被放下时触发此事件
+
+// dragstart 事件： 在进行拖放操作时，通过dataTransfer来实现数据的存储和获取，每个event事件对象中都会有DataTransfer对象用来保存被拖动的数据。它可以保存一项或多项数据、一种或者多种数据类型。

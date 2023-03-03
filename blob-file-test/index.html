@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blob file 的获取方式</title>
+  <style>
+    #drop {
+      border: 1px red dashed;
+      width: 300px;
+      height: 300px;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- blob是二进制大对象，而file对象又继承了blob(更完善了) -->
+  <input type="file" id="file">
+  <div id="drop"></div>
+
+  <script>
+    // file的获取方法一:文件选择上传
+    const fileDom = document.querySelector('#file')
+
+    fileDom.addEventListener('change', (e) => {
+      console.log(e.target.files)  // 获取file
+    })
+
+
+    // file的获取方法二:文件拖拽drop区获取 
+    const dropDom = document.querySelector('#drop')
+
+    dropDom.addEventListener('dragover', (e) => {
+      e.preventDefault()
+    })
+
+    dropDom.addEventListener('drop', (e) => {
+      e.preventDefault()
+      const fileData = e.dataTransfer.files
+      console.log('放下了且拿到文件', fileData)
+    })
+  </script>
+</body>
+
+</html>
