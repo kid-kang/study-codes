@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>blob file 的获取方式</title>
+  <title>file的获取方式</title>
   <style>
     #drop {
       border: 1px red dashed;
@@ -26,8 +26,10 @@
     const fileDom = document.querySelector('#file')
 
     fileDom.addEventListener('change', (e) => {
-      console.log(e.target.files)  // 获取file
+      console.log(e.target.files[0])  // 获取file
     })
+
+
 
 
     // file的获取方法二:文件拖拽drop区获取 
@@ -39,7 +41,8 @@
 
     dropDom.addEventListener('drop', (e) => {
       e.preventDefault()
-      const fileData = e.dataTransfer.files
+      const fileData = e.dataTransfer.files[0]
+      const fileUrl = URL.createObjectURL(fileData) // 有了url就可以用作回显或下载
       console.log('放下了且拿到文件', fileData)
     })
   </script>

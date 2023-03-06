@@ -1,0 +1,9 @@
+<script>
+  // 通过 input 的 change 事件 拿到 e.target.files[0]
+  const formData = new FormData()
+  formData.append('file', file) // 文件对象
+
+  const request = new XMLHttpRequest()
+  request.open("POST", "http://foo.com/submitform.php")
+  request.send(formData);
+</script>

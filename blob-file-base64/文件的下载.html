@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文件下载</title>
+</head>
+
+<body>
+  <button>点击下载</button>
+  <script>
+    // 使用 URL.createObjectURL(BlobVal) 创建一个url链接，这个url是保存在内存中的
+    // 注意：文件类型也是属于Blob的
+    // 利用a标签实现文件下载
+    // URL.revokeObjectURL() 释放url清理内存
+
+    const btn = document.querySelector('button')
+
+    btn.addEventListener('click', () => {
+      const file = '假如我是请求过来的文件'
+      const blobVal = new Blob([file], { type: 'text/plain' }) // 转成Blob大数据对象（如果是请求来的则不用转成blob，直接在createObjectURL当成参数使用）
+
+      const fileUrl = URL.createObjectURL(blobVal)  // 返回url
+
+      const a = document.createElement('a')
+      a.setAttribute('href', fileUrl)
+      a.setAttribute('download')
+      a.click()
+      URL.revokeObjectURL(fileUrl)  //清理内存
+    })
+  </script>
+</body>
+
+</html>
