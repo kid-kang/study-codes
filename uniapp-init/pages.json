@@ -1,0 +1,192 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "navigationBarBackgroundColor": "#d2e4ff",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/services/index",
+      "style": {
+        "navigationBarTitleText": "服务",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/ucenter/index",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false,
+        "navigationStyle": "custom"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#ffffff",
+    "app-plus": {
+      "background": "#efeff4"
+    }
+  },
+  "subPackages": [
+    {
+      "root": "subpkg/success",
+      "name": "success",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "navigationBarTitleText": "提交成功",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpkg/ucenter",
+      "name": "ucenter",
+      "pages": [
+        {
+          "path": "real-name",
+          "style": {
+            "navigationBarTitleText": "实名认证",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "handling",
+          "style": {
+            "navigationBarTitleText": "事项办理",
+            "navigationBarBackgroundColor": "#fff",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "appraise",
+          "style": {
+            "navigationBarTitleText": "事项评价",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "feedback",
+          "style": {
+            "navigationBarTitleText": "意见反馈",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "handling-detail",
+          "style": {
+            "navigationBarTitleText": "事项详情",
+            "navigationBarBackgroundColor": "#fff",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpkg/unlock",
+      "name": "unlock",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "navigationBarTitleText": "一键开锁",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpkg/search",
+      "name": "search",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "navigationBarTitleText": "搜索",
+            "navigationBarBackgroundColor": "#f7f7f8",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpkg/face",
+      "name": "face",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "navigationBarTitleText": "人脸识别",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
+    },
+    {
+      "root": "subpkg/dynamicForm",
+      "name": "dynamicForm",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "navigationBarTitleText": "填写表单",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/home/index": {
+      "packages": [
+        "search"
+      ]
+    },
+    "pages/services/index": {
+      "packages": [
+        "dynamicForm"
+      ]
+    },
+    "pages/ucenter/index": {
+      "packages": [
+        "ucenter"
+      ]
+    },
+    "subpkg/dynamicForm/index": {
+      "packages": [
+        "face"
+      ]
+    }
+  },
+  "tabBar": {
+    "selectedColor": "#3787FF",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "static/icons/home.png",
+        "selectedIconPath": "static/icons/home_active.png"
+      },
+      {
+        "pagePath": "pages/services/index",
+        "text": "服务",
+        "iconPath": "static/icons/phone.png",
+        "selectedIconPath": "static/icons/phone_active.png"
+      },
+      {
+        "pagePath": "pages/ucenter/index",
+        "text": "我的",
+        "iconPath": "static/icons/ucenter.png",
+        "selectedIconPath": "static/icons/ucenter_active.png"
+      }
+    ]
+  }
+}

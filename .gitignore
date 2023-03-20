@@ -4,6 +4,7 @@
 .pnp.js
 /.vscode
 /.idea
+/unpackage
 
 # testing
 /coverage
