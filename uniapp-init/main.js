@@ -4,11 +4,11 @@ import App from './App'
 import store from './store'
 // 通用样式
 import './styles/global.scss'
-import request from './request'
+import api from './request'
+
+Vue.prototype.$api = api  // this.request()
 
 Vue.config.productionTip = false
-app.config.globalProperties.request = request  // this.request()
-
 App.mpType = 'app'
 
 const app = new Vue({

@@ -14,7 +14,9 @@ view {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-}s
+}
+
+// 以下类得设置 position: relative;
 
 .line-top {
   &:before {
