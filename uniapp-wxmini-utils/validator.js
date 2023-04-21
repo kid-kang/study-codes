@@ -27,6 +27,7 @@ export default class Validator {
     })
   }
 }
+
 Validator.strategies = {
   isNonEmpty: function (checkItem) {
     return checkItem !== undefined && String(checkItem).length

@@ -1,8 +1,8 @@
 /**
-   * 图片处理-预览图片
-   * @param {Array} urls - 图片列表
-   * @param {Number} current - 首个预览下标
-   */
+ * 图片处理-预览图片
+ * @param {Array} urls - 图片列表
+ * @param {Number} current - 首个预览下标
+ */
 export function previewImage(urls = [], current = 0) {
   uni.previewImage({
     urls: urls,
@@ -66,12 +66,11 @@ export function formatSexAndBirthWithIdcard(idNo) {
   }
 }
 
-
 /**
-* 获取是否授权了定位权限
-* @param { Boolean } launchAuth: 是否发起授权请求, 初次有效
-* @return { Boolean }
-*/
+ * 获取是否授权了定位权限
+ * @param { Boolean } launchAuth: 是否发起授权请求, 初次有效
+ * @return { Boolean }
+ */
 export function getLocationAuth(launchAuth) {
   return new Promise((resolve, reject) => {
     uni.getSystemInfo({
@@ -99,10 +98,7 @@ export function getLocationAuth(launchAuth) {
         } else if (locationEnabled && locationAuthorized) {
           uni.getSetting({
             success: (res) => {
-              if (
-                launchAuth &&
-                res.authSetting['scope.userLocation'] === undefined
-              ) {
+              if (launchAuth && res.authSetting['scope.userLocation'] === undefined) {
                 return uni.authorize({
                   scope: 'scope.userLocation',
                   success: () => {
@@ -131,7 +127,7 @@ export function getLocationAuth(launchAuth) {
  * @param lo1 第一个坐标点的经度 如：118.082745
  * @param la2 第二个坐标点的纬度
  * @param lo2 第二个坐标点的经度
- * @return { Object } { km: 千米/公里, m: 米 }
+ * @return { Number } 米
  * @tips 注意经度和纬度参数别传反了, 一般经度为0~180、纬度为0~90
  */
 export function calcDistanceLL(la1, lo1, la2, lo2) {
@@ -142,20 +138,11 @@ export function calcDistanceLL(la1, lo1, la2, lo2) {
   let s =
     2 *
     Math.asin(
-      Math.sqrt(
-        Math.pow(Math.sin(La3 / 2), 2) +
-          Math.cos(La1) * Math.cos(La2) * Math.pow(Math.sin(Lb3 / 2), 2)
-      )
+      Math.sqrt(Math.pow(Math.sin(La3 / 2), 2) + Math.cos(La1) * Math.cos(La2) * Math.pow(Math.sin(Lb3 / 2), 2))
     )
 
   s = s * 6378.137
   s = Math.round(s * 10000) / 10000
 
-  // return {
-  //   km: s,
-  //   m: Math.round(s * 1000),
-  // }
   return Math.round(s * 1000)
 }
-
-
