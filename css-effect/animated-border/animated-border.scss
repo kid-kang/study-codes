@@ -1,0 +1,65 @@
+$button-width: 300px;
+$button-height: 150px;
+$border-width: 2px;
+$button-color: #fed75a;
+$animate-duration: 5s;
+
+@keyframes border-animate {
+
+  0%,
+  100% {
+    clip-path: inset(0 0 $button-height - $border-width 0);
+  }
+
+  25% {
+    clip-path: inset(0 $button-width - $border-width 0 0);
+  }
+
+  50% {
+    clip-path: inset($button-height - $border-width 0 0 0);
+  }
+
+  75% {
+    clip-path: inset(0 0 0 $button-width - $border-width);
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #1d1d1d;
+}
+
+.animated-border {
+  position: relative;
+  display: block;
+  width: $button-width;
+  height: $button-height;
+  margin: calc(50vh - #{$button-height} / 2) auto 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 24px;
+  line-height: $button-height;
+  color: $button-color;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    border: $border-width solid $button-color;
+    animation: border-animate $animate-duration linear infinite;
+  }
+
+  &::after {
+    animation-delay: $animate-duration * -.5;
+  }
+}

@@ -1,0 +1,84 @@
+@-webkit-keyframes border-animate {
+  0%,
+  100% {
+    -webkit-clip-path: inset(0 0 148px 0);
+    clip-path: inset(0 0 148px 0);
+  }
+  25% {
+    -webkit-clip-path: inset(0 298px 0 0);
+    clip-path: inset(0 298px 0 0);
+  }
+  50% {
+    -webkit-clip-path: inset(148px 0 0 0);
+    clip-path: inset(148px 0 0 0);
+  }
+  75% {
+    -webkit-clip-path: inset(0 0 0 298px);
+    clip-path: inset(0 0 0 298px);
+  }
+}
+
+@keyframes border-animate {
+  0%,
+  100% {
+    -webkit-clip-path: inset(0 0 148px 0);
+    clip-path: inset(0 0 148px 0);
+  }
+  25% {
+    -webkit-clip-path: inset(0 298px 0 0);
+    clip-path: inset(0 298px 0 0);
+  }
+  50% {
+    -webkit-clip-path: inset(148px 0 0 0);
+    clip-path: inset(148px 0 0 0);
+  }
+  75% {
+    -webkit-clip-path: inset(0 0 0 298px);
+    clip-path: inset(0 0 0 298px);
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #1d1d1d;
+}
+
+.animated-border {
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 150px;
+  margin: calc(50vh - 150px / 2) auto 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 24px;
+  line-height: 150px;
+  color: #fed75a;
+}
+
+.animated-border::before,
+.animated-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 2px solid #fed75a;
+  -webkit-animation: border-animate 5s linear infinite;
+  animation: border-animate 5s linear infinite;
+}
+
+.animated-border::after {
+  -webkit-animation-delay: -2.5s;
+  animation-delay: -2.5s;
+}
+/*# sourceMappingURL=animated-border.css.map */
