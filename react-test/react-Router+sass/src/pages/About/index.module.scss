@@ -1,3 +1,4 @@
+// 如果你使用create-react-app等React脚手架搭建项目，并且按照规定的命名方式，在组件文件夹中创建了与组件同名的CSS文件（如MyComponent.js和MyComponent.css），那么这个CSS文件会自动被webpack打包并应用到组件中，无需手动引入。
 .nav {
   display: flex;
   justify-content: space-around;
