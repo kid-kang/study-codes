@@ -1,0 +1,25 @@
+.top-jumper {
+  position: fixed;
+  right: 10%;
+  bottom: 7%;
+  width: 45rem;
+  height: 45rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4rem;
+  font-size: 12rem;
+  z-index: 999;
+
+  &:before {
+    content: '▲';
+    display: block;
+    text-align: center;
+    color: #aaa;
+    line-height: 42rem;
+  }
+}
+@media screen and (max-width: 675px) {
+  .top-jumper {
+    display: none;
+  }
+}

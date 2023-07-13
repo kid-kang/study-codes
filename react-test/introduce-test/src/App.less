@@ -1,0 +1,61 @@
+.app-wrap {
+  width: 100%;
+  min-height: 100vh;
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    height: 90rem;
+    .logo {
+      width: 50%;
+      font-weight: bold;
+      font-size: 26rem;
+      color: #ffc001;
+      text-indent: 100rem;
+    }
+    .tab-list__wrap {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      font-size: 14rem;
+      color: #777;
+      .tab-list {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        line-height: 90rem;
+        span {
+          color: #e5e5e5;
+        }
+        .isActiveTrue {
+          color: #ffc001;
+        }
+        .isActiveFalse {
+          color: #777;
+          &:hover {
+            color: #ffc001;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 675px) {
+    nav {
+      justify-content: center;
+      height: 140rem;
+      .logo {
+        display: none;
+      }
+      .tab-list__wrap {
+        width: 100%;
+        font-size: 16rem;
+        .tab-list {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
